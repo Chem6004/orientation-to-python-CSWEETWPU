@@ -73,8 +73,9 @@ k = cE(r_eq)
 Q1.0.1:
     What is the reduced mass of the CO milecule in atomic units?
 """
-C_mass = 12.0   # mass of carbon atom in amu
-O_mass = 16.0   # mass of oxygen atom in amu
+# Proton = 1836 amu
+C_mass = 12 * 1836   # mass of carbon atom in amu
+O_mass = 16 * 1836   # mass of oxygen atom in amu
 CO_mu = (C_mass * O_mass) / (C_mass + O_mass) # calculate reduced mass
 print("Calculated reduced mass of CO molecule:",CO_mu)
 ### Reduced mass of CO molecules is 6.857 amu
@@ -125,7 +126,7 @@ Q1.0.2:
     common spectroscopic unit system of your choosing (wavenumbers, nm, um,
     THz, are al acceptable choices)
 """    
-r = 2 * np.pi * np.sqrt(mu / k)
+r = 2 * np.pi * np.sqrt(CO_mu / k)
 print("Vibrational frequency (atomic units):",r)
 print("Vibrational frequency (nm):",r * 0.053)
 
@@ -167,5 +168,5 @@ Q1.0.3:
     What will be the acceleration of the bond stretch when C is separted from O
     by 3 atomic units? You can express your acceleration in atomic units, also.
 """
-a = -1 * fE(3) / mu 
+a = -1 * fE(3) / CO_mu 
 print("Bond acceleration at 3 atomic units:",a)
